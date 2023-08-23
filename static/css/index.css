@@ -6,10 +6,12 @@ body{
 .uegtitle{
     color: white;
     text-align: center;
+    font-size: 56px;
     font-family: "UEGfont";
 }
 
 .uegxiaotitle{
     text-align: center;
+    font-size: 16px;
     font-family: "UEGfont";
 }
