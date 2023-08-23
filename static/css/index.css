@@ -1,9 +1,15 @@
 body{
-    background-color:#042d36;
+    background-color:#021826;
     color: white;
 }
 
 .uegtitle{
     color: white;
     text-align: center;
+    font-family: "UEGfont";
+}
+
+.uegxiaotitle{
+    text-align: center;
+    font-family: "UEGfont";
 }
