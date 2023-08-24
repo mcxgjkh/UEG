@@ -30,7 +30,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333333;
+	background-color: #021826;
   }
   
 li {
@@ -82,7 +82,7 @@ li.dropdown {
 .BigFooter{
 	height: 350px;
 	width: 100%;
-	background-color: #000000;
+	background-color: #021826;
 }
  
 .BigFooterBase{
@@ -106,7 +106,7 @@ li.dropdown {
  
 .BigFooterBaseNavList h4{
 	font-size: 15px;
-	color: #616161;
+	color: #ffffff;
 	padding-top: 20px;
 	padding-bottom: 4px;
 }
