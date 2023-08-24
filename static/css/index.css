@@ -2,14 +2,22 @@ body{
     background-color:#021826;
     color: white;
 }
-
+/*
 .uegtitle{
     color: white;
     text-align: left;
     font-size: 32px;
     font-family: "UEGfont";
 }
-
+*/
 .uegearth{
     text-align: left;
+}
+
+.tuwentonghangbig{
+    color: white;
+    font-family: "UEGfont";
+    font-size:36px;
+    margin-top:-16px;
+    padding-left:20px;      
 }
