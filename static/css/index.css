@@ -81,7 +81,7 @@ li.dropdown {
 
 
 .BigFooter{
-	height: 350px;
+	height: 450px;
 	width: 100%;
 	background-color: #021826;
 }
@@ -93,7 +93,7 @@ li.dropdown {
 }
  
 .BigFooterBaseNav{
-	height: 500px;
+	height: 350px;
 	width: 1200px;
 }
  
@@ -140,7 +140,7 @@ li.dropdown {
 	width: 1200px;
 	height: 50px;
 	margin: 0 auto;
-	color: black;
+	color: #ffffff;
 	font-size: 15px;
 	line-height: 50px;
 }
