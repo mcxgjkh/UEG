@@ -100,8 +100,7 @@ li.dropdown {
 .BigFooterBaseNavList{
 	height: 350px;
 	width: 190px;
-	padding-left: 80px;
-	padding-right: 10px;
+        margin-left: 10％;
 	float: left;
 }
  
@@ -110,7 +109,7 @@ li.dropdown {
 	color: #ffffff;
 	padding-top: 20px;
 	padding-bottom: 4px;
-	padding-left: 5px
+	padding-left: 6px
 }
  
 .BigFooterBaseNavList ul{
