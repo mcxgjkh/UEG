@@ -137,12 +137,12 @@ li.dropdown {
 }
  
 .BigFooterBaseButtom1{
-	width: 1200px;
-	height: 50px;
+	width: 1600px;
+	height: 60px;
 	margin: 0 auto;
 	color: #021826;
 	font-size: 15px;
-	line-height: 50px;
+	line-height: 15px;
 }
  
 .BigFooterBaseButtom1left{
@@ -164,7 +164,7 @@ li.dropdown {
 .BigFooterBaseButtom1right ul li a{
 	color: #ffffff;
 	padding-right: 20px;
-	font-size: 11px;
+	font-size: 18px;
 	text-decoration: none;
 }
  
@@ -216,15 +216,15 @@ li.dropdown {
 }
 
 .member{
-	background-color: #f2fefe;padding-bottom: 50px;width:100%;padding-top:20px;
+	background-color: #021826;padding-bottom: 50px;width:100%;padding-top:20px;
 }
 
 .message{
-	margin-left:12%;text-align:center;width:17%;display:inline-block;color:#333333;
+	margin-left:12%;text-align:center;width:17%;display:inline-block;color:#ffffff;
 }
 
 .photo{
-	width:170px;height:170px;border-radius: 50%;overflow: hidden;border: 2px solid #78d1ff;margin:auto;
+	width:170px;height:170px;border-radius: 50%;overflow: hidden;border: 2px solid #67f2ff;margin:auto;
 }
 
 .photo img{
