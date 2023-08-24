@@ -1,4 +1,4 @@
-/*
+
 body{
     background-color:#021826;
     color: white;
@@ -10,7 +10,7 @@ body{
     font-size: 32px;
     font-family: "UEGfont";
 }
-
+/*
 .uegearth{
     text-align: left;
     margin-top:0px;
@@ -82,7 +82,7 @@ li.dropdown {
 .BigFooter{
 	height: 350px;
 	width: 100%;
-	background-color: #f2f2f2;
+	background-color: #000000;
 }
  
 .BigFooterBase{
@@ -121,7 +121,7 @@ li.dropdown {
  
 .BigFooterBaseNavList ul li a{
 	font-size: 11px;
-	color: #616161;
+	color: #ffffff;
 	text-decoration: none;
 }
  
