@@ -12,12 +12,14 @@ body{
 */
 .uegearth{
     text-align: left;
+    margin-top:0px;
+    padding-left:20px;
 }
 
 .tuwentonghangbig{
     color: white;
     font-family: "UEGfont";
     font-size:36px;
-    margin-top:-16px;
-    padding-left:20px;      
+    margin-top:0px;
+    padding-left:40px;      
 }
