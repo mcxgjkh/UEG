@@ -176,3 +176,60 @@ li.dropdown {
 .BigFooterBaseButtom1right ul li a:hover {
 	text-decoration: underline;
 }
+
+.title{
+	margin-top:50px;margin-left:10%;margin-bottom:50px;color:#3863b2;
+}
+
+.title h1{
+	display:inline;font-size: 30px;
+}
+
+.title p{
+	font-size:10px;margin-left:45px;
+}
+
+.title img{
+	margin-right:10px
+}
+
+.studio{
+    width:80%;
+    padding-bottom: 30px;
+    margin: auto;
+    border-radius: 10px;
+    border: 2px solid #67f2ff;
+    margin-bottom:50px;
+}
+
+.letter{
+	width:90%;margin:auto;margin-top:30px;
+}
+
+.letter h3{
+	text-align: right;
+}
+
+.letter p{
+	color: #63646b;
+}
+
+.member{
+	background-color: #f2fefe;padding-bottom: 50px;width:100%;padding-top:20px;
+}
+
+.message{
+	margin-left:12%;text-align:center;width:17%;display:inline-block;color:#333333;
+}
+
+.photo{
+	width:170px;height:170px;border-radius: 50%;overflow: hidden;border: 2px solid #78d1ff;margin:auto;
+}
+
+.photo img{
+	width:170px;height:170px;
+}
+
+.message h4{
+	font-size: 24px;margin-top:10px;margin-bottom: 15px;
+}
