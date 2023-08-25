@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>UEG | 地下城资格抽取</title>
+    <title>地下城资格抽取</title>
     <link rel="stylesheet" href="https://mcxgjkh.github.io/UEG/static/css/chouzige.css">
 </head>
 <body>
@@ -27,11 +27,10 @@
             } else {
                 // 用户未登录时，提示需要登录并导航至登录页面
                 resultElement.textContent = "请登录后抽取资格。";
-                drawButton.textContent = "带我登录";
+                drawButton.textContent = "需要登录";
                 drawButton.addEventListener("click", function() {
-                    window.location.href = "https://mcxgjkh.github.io/UEG/templates/join.html";
+                    window.location.href = "https://mcxgjkh.github.io/UEG/templates/join.html?nocache=" + new Date().getTime();
                 });
-                return; // 添加此行以防止继续执行下面的代码
             }
 
             drawButton.addEventListener("click", function() {
