@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>地下城资格抽取</title>
+    <link rel="stylesheet" href="https://mcxgjkh.github.io/UEG/static/css/chouzige.css">
+</head>
+<body>
+    <h1 class="custom-heading">地下城资格抽取</h1>
+
+    <button id="drawButton">抽取资格</button>
+    <div id="result"></div>
+
+    <script>
+        // JavaScript 代码嵌入在这里
+        document.addEventListener("DOMContentLoaded", function() {
+            var drawButton = document.getElementById("drawButton");
+            var resultElement = document.getElementById("result");
+
+            var drawCount = 0;
+
+            drawButton.addEventListener("click", function() {
+                if (drawCount >= 3) {
+                    resultElement.textContent = "您已经抽取了三次，不能再抽取了。";
+                    drawButton.disabled = true;
+                    drawButton.classList.add("disabled");
+                    drawButton.textContent = "无资格";
+                } else {
+                    var random = Math.random();
+                    var drawProbability = 0.4;
+                    var drawResult = random <= drawProbability;
+
+                    if (drawResult) {
+                        resultElement.textContent = "恭喜您，已中签！";
+                    } else {
+                        resultElement.textContent = "抱歉，未中签。";
+                    }
+
+                    drawCount++;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
