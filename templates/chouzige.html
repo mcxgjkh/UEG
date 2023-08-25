@@ -8,7 +8,7 @@
 <body>
     <h1 class="custom-heading">地下城资格抽取</h1>
 
-    <button id="drawButton">抽取资格</button>
+    <button id="drawButton" disabled>抽取资格</button>
     <div id="result"></div>
 
     <script>
@@ -18,6 +18,13 @@
             var resultElement = document.getElementById("result");
 
             var drawCount = 0;
+
+            // 检查用户是否已登录
+            var isLoggedIn = localStorage.getItem("isLoggedIn");
+
+            if (isLoggedIn === "true") {
+                drawButton.removeAttribute("disabled");
+            }
 
             drawButton.addEventListener("click", function() {
                 if (drawCount >= 3) {
