@@ -24,6 +24,13 @@
 
             if (isLoggedIn === "true") {
                 drawButton.removeAttribute("disabled");
+            } else {
+                // 用户未登录时，提示需要登录并导航至登录页面
+                resultElement.textContent = "请登录后抽取资格。";
+                drawButton.textContent = "带我登录";
+                drawButton.addEventListener("click", function() {
+                    window.location.href = "https://mcxgjkh.github.io/UEG/templates/join.html";
+                });
             }
 
             drawButton.addEventListener("click", function() {
