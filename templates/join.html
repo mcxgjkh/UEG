@@ -6,28 +6,149 @@
     <link href="https://mcxgjkh.github.io/UEG/static/css/join.css" rel="stylesheet">
 </head>
 <body>
-    <!--导航-->
+    <!--导航
     <div class="up">
         <a href="https://mcxgjkh.github.io/UEG/index.html">首页</a>
         <a href="https://mcxgjkh.github.io/UEG/templates/chineseearth.html">流浪地球计划</a>
         <a href="https://mcxgjkh.github.io/UEG/templates/join.html">地下城抽签</a>
         <a href="https://mcxgjkh.github.io/UEG/templates/join2.html">English</a>
     </div>
-    
-    <img src="https://mcxgjkh.github.io/UEG/static/images/title1.png">
+    -->
 
-    <form action="/join_form">
-        姓名：<input name="姓名">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>UEG | 注册与登录</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <link href="https://static0.xesimg.com/talcode/bootstrap4.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://mcxgjkh.github.io/UEG/static/css/join.css" rel="stylesheet">
+</head>
+<body>
+    <h1>用户登录</h1>
+    
+    <form id="loginForm">
+        姓名：<input type="text" id="loginName" name="姓名">
         <br>
-        年龄：<input name="年龄">
+        年龄：<input type="text" id="loginAge" name="年龄">
+        <br>
+        密码：<input type="password" id="loginPassword" name="密码">
+        <br>
+        记住我：<input type="checkbox" id="rememberMe" name="rememberMe">
+        <br>
+        <button type="button" onclick="login()">登录</button>
+    </form>
+    
+    <h1>用户注册</h1>
+    
+    <form id="registerForm">
+        姓名：<input type="text" id="registerName" name="姓名">
+        <br>
+        年龄：<input type="text" id="registerAge" name="年龄">
         <br>
         性别：<input type="radio" name="性别" value="男">男
               <input type="radio" name="性别" value="女">女
         <br>
-        国家：<input name="国家">
+        国家：<input type="text" id="registerCountry" name="国家">
         <br>
-        <button>报名</button>
+        密码：<input type="password" id="registerPassword" name="密码">
+        <br>
+        <button type="button" onclick="register()">注册</button>
     </form>
+    
+    <h2>用户信息：</h2>
+    <div id="userInfo"></div>
 
+    <script>
+        // 在页面加载时检查 localStorage 并填充表单
+        window.onload = function () {
+            var storedUserData = localStorage.getItem("userData");
+            if (storedUserData) {
+                var user = JSON.parse(storedUserData);
+                document.getElementById("loginName").value = user.姓名;
+                document.getElementById("loginAge").value = user.年龄;
+                // 检查是否记住我，如果是则勾选记住我复选框
+                if (user.rememberMe) {
+                    document.getElementById("rememberMe").checked = true;
+                }
+            }
+        }
+
+        // Function to simulate user login
+        function login() {
+            // Retrieve stored user data from localStorage
+            var storedUserData = localStorage.getItem("userData");
+
+            if (storedUserData) {
+                var user = JSON.parse(storedUserData);
+                var inputName = document.getElementById("loginName").value;
+                var inputAge = document.getElementById("loginAge").value;
+                var inputPassword = document.getElementById("loginPassword").value;
+
+                // Verify user's identity (for demonstration, compare name, age, and password)
+                if (inputName === user.姓名 && inputAge === user.年龄) {
+                    // Encrypt the input password using SHA-256
+                    var encryptedInputPassword = sha256(inputPassword);
+
+                    // Compare the encrypted input password with the stored password
+                    if (encryptedInputPassword === user.密码) {
+                        // Display user information and other content
+                        var userInfoDiv = document.getElementById("userInfo");
+
+                        userInfoDiv.innerHTML = "<strong>姓名:</strong> " + user.姓名 + "<br>" +
+                                                "<strong>年龄:</strong> " + user.年龄 + "<br>" +
+                                                "<strong>性别:</strong> " + user.性别 + "<br>" +
+                                                "<strong>国家:</strong> " + user.国家 + "<br>" +
+                                                "<p>登录成功！</p>";
+
+                        // Redirect to another page after successful login
+                        window.location.href = "https://mcxgjkh.github.io/UEG/templates/chouminge.html";
+                    } else {
+                        alert("登录失败：密码不匹配！");
+                    }
+                } else {
+                    alert("登录失败：用户名或年龄不匹配！");
+                }
+            } else {
+                alert("用户信息未找到，请先注册或填写信息并点击注册按钮。");
+            }
+        }
+
+        // Function to simulate user registration
+        function register() {
+            var name = document.getElementById("registerName").value;
+            var age = document.getElementById("registerAge").value;
+            var gender = document.querySelector('input[name="性别"]:checked').value;
+            var country = document.getElementById("registerCountry").value;
+            var password = document.getElementById("registerPassword").value;
+            
+            // 检查是否记住我复选框已勾选
+            var rememberMe = document.getElementById("rememberMe").checked;
+
+            // Encrypt the password using SHA-256
+            var encryptedPassword = sha256(password);
+
+            // Create a user object
+            var user = { 姓名: name, 年龄: age, 性别: gender, 国家: country, 密码: encryptedPassword };
+
+            // 如果记住我已勾选，则添加记住我标志
+            if (rememberMe) {
+                user.rememberMe = true;
+            }
+
+            // Store user data in localStorage
+            localStorage.setItem("userData", JSON.stringify(user));
+
+            alert("注册成功！");
+
+            // Redirect to another page after successful registration
+            window.location.href = "https://mcxgjkh.github.io/UEG/templates/chouminge.html";
+        }
+
+        // Function to compute SHA-256 hash
+        function sha256(input) {
+            return CryptoJS.SHA256(input).toString();
+        }
+    </script>
 </body>
 </html>
