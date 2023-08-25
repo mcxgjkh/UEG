@@ -21,8 +21,8 @@ body{
     color: white;
     font-family: "UEGfont";
     font-size:36px;
-    margin-top:0px;
-    padding-left:40px;      
+    margin-top:20px;
+    text-align: center;
 }
 
 ul {
@@ -154,7 +154,7 @@ li.dropdown {
 .BigFooterBaseButtom1right{
 	width: 70%;
 	float: left;
-	text-align: left;
+	text-align: center;
 }
  
 .BigFooterBaseButtom1right ul{
